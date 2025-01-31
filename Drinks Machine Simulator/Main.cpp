@@ -50,4 +50,6 @@ int main() {
 		cout << "You must select an option between 1-5." << endl;
 		break;
 	}
+
+	return 0;
 }
