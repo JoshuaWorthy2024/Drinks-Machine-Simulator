@@ -14,23 +14,40 @@ Example: “You chose: Coke.”
 Add error handling for invalid input (e.g., numbers outside the range 1–5).
 */
 
-void printMenu(std::string options[]) {
+void PrintMenu(std::string options[]) {
 	for (int i = 0; i < 5; i++) {
 		cout << (i + 1) << " - " << options[i] << endl;
 	}
 }
 
 int main() {
-	std::string options[] = { "Water", "Coke", "Lemonade", "Dr.Pepper", "Sprite" };
-	printMenu(options);
+	std::string Options[] = { "Water", "Coke", "Lemonade", "Dr.Pepper", "Sprite" };
+	PrintMenu(Options);
 
-	int beverageChoice = 0;
+	int BeverageChoice = 0;
 
-	cout << endl << "Please pick an beverage choice: ";
-	cin >> beverageChoice;
+	cout << endl << "Please pick a beverage choice: ";
+	cin >> BeverageChoice;
+
+	cout << endl << endl  << "---Method 1---" << endl;
+
+	switch (BeverageChoice) {
+	case 1:
+	case 2:
+	case 3:
+	case 4:
+	case 5:
+		cout << "You chose " << Options[BeverageChoice - 1] << "." << endl << endl;
+		break;
+	default:
+		cout << "You must select an option between 1-5." << endl << endl;
+		break;
+	}
+
+	cout << "---Method 2---" << endl;
 
 	// Using switch statement instead of array position to follow instructions
-	switch (beverageChoice) {
+	switch (BeverageChoice) {
 	case 1:
 		cout << "You chose Water." << endl;
 		break;
